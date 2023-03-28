@@ -4,3 +4,7 @@ class Node {
         this.next = null;
     }
 }
+
+const linkedList = (startingNode) => {
+    let headNode = startingNode;
+};
