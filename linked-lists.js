@@ -163,3 +163,35 @@ const linkedList = (startingNode) => {
         removeAt,
     };
 };
+
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+const d = new Node('D');
+
+const newList = linkedList(a);
+newList.append(b);
+newList.append(c);
+newList.append(d);
+
+const e = new Node('E');
+newList.prepend(e);
+
+console.log(newList.head());
+console.log(newList.size());
+console.log(newList.tail());
+console.log(newList.at(1));
+console.log(newList.at(10));
+newList.pop();
+console.log(newList.tail());
+console.log(newList.contains('A'));
+console.log(newList.contains('X'));
+console.log(newList.find('C'));
+console.log(newList.find('X'));
+newList.toString();
+newList.insertAt('X', 2);
+newList.toString();
+newList.insertAt('X', 20);
+newList.removeAt(3);
+newList.toString();
+newList.removeAt(30);
