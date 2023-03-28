@@ -73,5 +73,15 @@ const linkedList = (startingNode) => {
         }
     };
 
+    // Return true if the passed in value is in the list and otherwise returns false.
+    let contains = (value) => {
+        let current = headNode;
+        while (current !== null) {
+            if (current.value === value) return true;
+            current = current.next;
+        }
+        return false;
+    };
+
     return { append, prepend, size, tail };
 };
