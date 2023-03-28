@@ -113,14 +113,16 @@ const linkedList = (startingNode) => {
     const insertAt = (value, index) => {
         let current = headNode;
         let count = 0;
-        while (current !== null) {
-            if (count === index - 1) {
-                let tailList = current.next;
-                current.next = new Node(value);
-                current.next.next = tailList;
+        if (index < size()) {
+            while (current !== null) {
+                if (count === index - 1) {
+                    let tailList = current.next;
+                    current.next = new Node(value);
+                    current.next.next = tailList;
+                }
+                current = current.next;
+                count += 1;
             }
-            current = current.next;
-            count += 1;
         }
     };
 
