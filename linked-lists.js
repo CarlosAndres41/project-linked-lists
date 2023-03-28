@@ -20,5 +20,11 @@ const linkedList = (startingNode) => {
         }
     };
 
-    return { append };
+    // Add a new node containing value to the start of the list
+    let prepend = (newNode) => {
+        newNode.next = headNode;
+        headNode = newNode;
+    };
+
+    return { append, prepend };
 };
