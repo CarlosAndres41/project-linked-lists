@@ -7,6 +7,7 @@ class Node {
 
 const linkedList = (startingNode) => {
     let headNode = startingNode;
+    let tailNode = startingNode;
 
     // Add a new node containing value to the end of the list
     let append = (newNode) => {
@@ -14,6 +15,7 @@ const linkedList = (startingNode) => {
         while (current !== null) {
             if (current.next === null) {
                 current.next = newNode;
+                tailNode = newNode;
                 return;
             }
             current = current.next;
@@ -44,11 +46,7 @@ const linkedList = (startingNode) => {
 
     // Returns the last node in the list
     let tail = () => {
-        let current = headNode;
-        while (current !== null) {
-            if (current.next === null) return current;
-            current = current.next;
-        }
+        return tailNode;
     };
 
     // Return the node at the given index
@@ -66,9 +64,11 @@ const linkedList = (startingNode) => {
     // Removes the last element from the list
     let pop = () => {
         let current = headNode;
-        let tail = tail();
         while (current !== null) {
-            if (current.next === tail) current.next = null;
+            if (current.next === tail) {
+                current.next = null;
+                tailNode = current;
+            }
             current = current.next;
         }
     };
@@ -83,5 +83,5 @@ const linkedList = (startingNode) => {
         return false;
     };
 
-    return { append, prepend, size, tail };
+    return { append, prepend, size, head, tail, at, pop, contains };
 };
