@@ -26,5 +26,16 @@ const linkedList = (startingNode) => {
         headNode = newNode;
     };
 
-    return { append, prepend };
+    // Return the total number of nodes in the list
+    let size = () => {
+        let current = headNode;
+        let size = 0;
+        while (current !== null) {
+            size += 1;
+            current = current.next;
+        }
+        return size;
+    };
+
+    return { append, prepend, size };
 };
