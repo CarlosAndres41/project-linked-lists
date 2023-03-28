@@ -63,5 +63,15 @@ const linkedList = (startingNode) => {
         return null;
     };
 
+    // Removes the last element from the list
+    let pop = () => {
+        let current = headNode;
+        let tail = tail();
+        while (current !== null) {
+            if (current.next === tail) current.next = null;
+            current = current.next;
+        }
+    };
+
     return { append, prepend, size, tail };
 };
