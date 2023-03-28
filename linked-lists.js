@@ -109,6 +109,21 @@ const linkedList = (startingNode) => {
         console.log(string);
     };
 
+    // Inserts a new node with the provided value at the given index.
+    const insertAt = (value, index) => {
+        let current = headNode;
+        let count = 0;
+        while (current !== null) {
+            if (count === index - 1) {
+                let tailList = current.next;
+                current.next = new Node(value);
+                current.next.next = tailList;
+            }
+            current = current.next;
+            count += 1;
+        }
+    };
+
     return {
         append,
         prepend,
@@ -120,5 +135,6 @@ const linkedList = (startingNode) => {
         contains,
         find,
         toString,
+        insertAt,
     };
 };
