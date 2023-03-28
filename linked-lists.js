@@ -37,5 +37,10 @@ const linkedList = (startingNode) => {
         return size;
     };
 
+    // Returns the first node in the list
+    let head = () => {
+        return headNode;
+    };
+
     return { append, prepend, size };
 };
