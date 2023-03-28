@@ -83,5 +83,16 @@ const linkedList = (startingNode) => {
         return false;
     };
 
-    return { append, prepend, size, head, tail, at, pop, contains };
+    // Return the index of the node containing value, or null if not found.
+    let find = (value) => {
+        let current = headNode;
+        let count = 0;
+        while (current !== null) {
+            if (current.value === value) return count;
+            count += 1;
+            current = current.next;
+        }
+        return null;
+    };
+    return { append, prepend, size, head, tail, at, pop, contains, find };
 };
