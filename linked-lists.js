@@ -51,5 +51,17 @@ const linkedList = (startingNode) => {
         }
     };
 
+    // Return the node at the given index
+    let at = (index) => {
+        let current = headNode;
+        let count = 0;
+        while (current !== null) {
+            if (count === index) return current;
+            count += 1;
+            current = current.next;
+        }
+        return null;
+    };
+
     return { append, prepend, size, tail };
 };
