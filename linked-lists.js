@@ -119,12 +119,32 @@ const linkedList = (startingNode) => {
                     let tailList = current.next;
                     current.next = new Node(value);
                     current.next.next = tailList;
+                    return;
                 }
                 current = current.next;
                 count += 1;
             }
         } else {
             console.log("Index doesn't exist");
+        }
+    };
+
+    // Removes the node at the given index.
+    const removeAt = (index) => {
+        let current = headNode;
+        let count = 0;
+        if (index < size()) {
+            while (current !== null) {
+                if (count === index - 1) {
+                    let tail = current.next.next;
+                    current.next = tail;
+                    return;
+                }
+                count += 1;
+                current = current.next;
+            }
+        } else {
+            throw new Error("Index doesn't exists");
         }
     };
 
@@ -140,5 +160,6 @@ const linkedList = (startingNode) => {
         find,
         toString,
         insertAt,
+        removeAt,
     };
 };
