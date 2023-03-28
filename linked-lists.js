@@ -94,5 +94,31 @@ const linkedList = (startingNode) => {
         }
         return null;
     };
-    return { append, prepend, size, head, tail, at, pop, contains, find };
+
+    // Represents your LinkedList objects as strings, so you can print them out and preview them in the console.
+    const toString = () => {
+        let current = headNode;
+        let string = '';
+        while (current !== null) {
+            string += `${current.value} -> `;
+            if (current === tailNode) {
+                string += `null`;
+            }
+            current = current.next;
+        }
+        console.log(string);
+    };
+
+    return {
+        append,
+        prepend,
+        size,
+        head,
+        tail,
+        at,
+        pop,
+        contains,
+        find,
+        toString,
+    };
 };
