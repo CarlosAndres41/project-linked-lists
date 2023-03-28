@@ -123,6 +123,8 @@ const linkedList = (startingNode) => {
                 current = current.next;
                 count += 1;
             }
+        } else {
+            console.log("Index doesn't exist");
         }
     };
 
