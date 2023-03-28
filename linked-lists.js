@@ -42,5 +42,14 @@ const linkedList = (startingNode) => {
         return headNode;
     };
 
-    return { append, prepend, size };
+    // Returns the last node in the list
+    let tail = () => {
+        let current = headNode;
+        while (current !== null) {
+            if (current.next === null) return current;
+            current = current.next;
+        }
+    };
+
+    return { append, prepend, size, tail };
 };
